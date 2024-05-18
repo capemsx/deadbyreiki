@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 public class InteractableObject : MonoBehaviour
 {
-    public GameObject? uiObject;
+    public GameObject uiObject;
     public GameObject interactableObject;
     public Camera playerCam;
     public GameObject uiCameraInteractionHint;
     public GameObject itemSelector;
+    public BookPageController bookPageController;
 
     private bool isInteractable = false;
 
@@ -20,20 +21,20 @@ public class InteractableObject : MonoBehaviour
     void Update()
     {
         // Überprüfe, ob der Spieler ESC drückt, um das UI zu schließen
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             if (uiObject)
             {
                 uiObject.SetActive(false);
             }
             else
-            {
+            {   
                 interactableObject.GetComponent<Book>().CloseBook();
             }
             Cursor.lockState = CursorLockMode.Locked;
         }
 
-        float maxDistance = 500f;
+        float maxDistance = 4f;
         float maxAngle = 30f;
 
         Ray ray = playerCam.ScreenPointToRay(Input.mousePosition);
@@ -61,6 +62,7 @@ public class InteractableObject : MonoBehaviour
                         }
                         else
                         {
+                            bookPageController.setBook(interactableObject.GetComponent<Book>());
                             interactableObject.GetComponent<Book>().OpenBook();
                         }
                         Cursor.lockState = CursorLockMode.None;
