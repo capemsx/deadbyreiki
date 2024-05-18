@@ -1469,8 +1469,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 350146061}
-  speed: 9
-  gravity: -9.81
+  speed: 5
+  gravity: -30
   playerOrientation: {fileID: 292625346}
 --- !u!143 &350146061
 CharacterController:
@@ -1528,6 +1528,7 @@ MonoBehaviour:
   inventory: []
   bookPageController: {fileID: 277999296}
   playerCam: {fileID: 616460277}
+  PickupDistance: 4
 --- !u!1001 &363800719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4739,6 +4740,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   InteractionInfo: {fileID: 1506138021}
   playerCam: {fileID: 616460277}
+  InteractDistance: 4
 --- !u!4 &1338255828
 Transform:
   m_ObjectHideFlags: 0

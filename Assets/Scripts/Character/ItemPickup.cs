@@ -8,6 +8,7 @@ public class ItemPickup : MonoBehaviour
     public List<GameObject> inventory = new List<GameObject>(); // List to store picked-up items
     public BookPageController bookPageController;
     public Camera playerCam;
+    public int PickupDistance= 4;
     private GameObject player;
     private Book currentBook; // Reference to the currently held book
 
@@ -55,7 +56,7 @@ public class ItemPickup : MonoBehaviour
         Ray ray = playerCam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, PickupDistance))
         {
             // Check if the raycast hit an object tagged as "Item"
             if (hit.collider.CompareTag("Item"))

@@ -10,6 +10,7 @@ public class SelectionManager : MonoBehaviour
  
     public GameObject InteractionInfo;
     public Camera playerCam;
+    public int InteractDistance = 4;
     TextMeshProUGUI interaction_text;
     
  
@@ -22,7 +23,7 @@ public class SelectionManager : MonoBehaviour
     void Update()
     {
         Ray ray = playerCam.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out RaycastHit hit, 10))
+        if (Physics.Raycast(ray, out RaycastHit hit, InteractDistance))
         {
             var selectionTransform = hit.transform;
             InteractableObject1 interactable = selectionTransform.GetComponent<InteractableObject1>();

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class PlayerCam : MonoBehaviour
@@ -30,5 +31,10 @@ public class PlayerCam : MonoBehaviour
     public void allowPlayerMovement(bool pAllowPlayerMovement)
     {
         isPlayerMovementEnabled = pAllowPlayerMovement;
+    }
+
+    internal static Ray ScreenPointToRay(Vector3 mousePosition)
+    {
+        throw new NotImplementedException();
     }
 }
