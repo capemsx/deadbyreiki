@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.415
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.05283657, g: 0.055671085, b: 0.050247602, a: 0.415}
+  m_IndirectSpecularColor: {r: 0.052836757, g: 0.05567124, b: 0.050247658, a: 0.415}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -697,8 +697,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1018,7 +1018,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed10e91db0c307429ab85f5d30c6277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Sussy Letter
 --- !u!4 &181945527 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 55b2b5b64b4154d77b9cd52a07d990c4, type: 3}
@@ -1509,8 +1508,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85f1337537eae06419d5daaa03ae39d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemNameText: {fileID: 0}
-  itemPickupScript: {fileID: 0}
 --- !u!114 &350146063
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1523,14 +1520,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 552a3a977764b4149896ad5d39b3a6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickupKey: 101
-  interactKey: 102
-  inventory: []
-  bookPageController: {fileID: 277999296}
-  playerCam: {fileID: 616460277}
-  PickupDistance: 4
-  player: {fileID: 0}
-  currentBook: {fileID: 0}
 --- !u!1001 &363800719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1677,8 +1666,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 7.88344
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1771,8 +1760,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1914,8 +1903,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -3166,7 +3155,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 66a71534bddb9a143a49dcf45da2f224, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  respawnPoint: {fileID: 300404760}
 --- !u!1 &996222040
 GameObject:
   m_ObjectHideFlags: 0
@@ -3330,8 +3318,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4501,8 +4489,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4757,10 +4745,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56c561b0952414e448f5e7e355020581, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InteractionInfo: {fileID: 1506138021}
-  playerCam: {fileID: 616460277}
-  InteractDistance: 4
-  interaction_text: {fileID: 0}
 --- !u!4 &1338255828
 Transform:
   m_ObjectHideFlags: 0
@@ -5756,8 +5740,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5850,8 +5834,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -6631,7 +6615,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aed10e91db0c307429ab85f5d30c6277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ItemName: Antimachiavell
 --- !u!4 &1761684558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 409cef2ef0e0aed468d3010ab04633c6, type: 3}
@@ -7550,8 +7533,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -7688,8 +7671,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
