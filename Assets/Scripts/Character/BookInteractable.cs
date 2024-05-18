@@ -2,10 +2,10 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
 
-public class Book : MonoBehaviour, IInteractable
+public class Book : MonoBehaviour
 {
     public string imagesFolder = "PDFImages"; // Folder in Resources
-    private bool isOpen = false; // Flag to track if the book is open
+    public bool isOpen = false; // Flag to track if the book is open
     public RawImage leftPageDisplay;
     public RawImage rightPageDisplay;
     public Image bookBackground;
@@ -28,7 +28,7 @@ public class Book : MonoBehaviour, IInteractable
         }
     }
 
-    void OpenBook()
+    public void OpenBook()
     {
         // Logic to open the PDF file
         LoadImages();
