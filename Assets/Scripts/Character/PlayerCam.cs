@@ -5,6 +5,7 @@ public class PlayerCam : MonoBehaviour
     public float mouseSensitivity = 100f;
     public Transform playerBody;
     float xRotation = 0f;
+    private bool isPlayerMovementEnabled = true; // Flag to track player movement
 
     void Start()
     {
@@ -13,6 +14,8 @@ public class PlayerCam : MonoBehaviour
 
     void Update()
     {
+        if (isPlayerMovementEnabled) {
+
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
@@ -21,5 +24,11 @@ public class PlayerCam : MonoBehaviour
 
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);
         playerBody.Rotate(Vector3.up * mouseX);
+        }
+    }
+
+    public void allowPlayerMovement(bool pAllowPlayerMovement)
+    {
+        isPlayerMovementEnabled = pAllowPlayerMovement;
     }
 }
