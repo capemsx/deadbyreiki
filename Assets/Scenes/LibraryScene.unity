@@ -697,8 +697,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -953,7 +953,7 @@ MonoBehaviour:
   distanceInFrontOfCamera: 0.2
   letterRotation: {x: 0, y: 0, z: 0, w: 1}
   bookObject: {fileID: 1761684553}
-  bookInteractable: {fileID: 1332234926}
+  bookInteractable: {fileID: 0}
   letterImagePhysics: {fileID: 1191965534}
   letterPage: 0
   foundLetter: 0
@@ -1427,6 +1427,8 @@ GameObject:
   - component: {fileID: 350146056}
   - component: {fileID: 350146059}
   - component: {fileID: 350146061}
+  - component: {fileID: 350146063}
+  - component: {fileID: 350146062}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1494,6 +1496,30 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &350146062
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350146054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85f1337537eae06419d5daaa03ae39d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &350146063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350146054}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 552a3a977764b4149896ad5d39b3a6ed, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &363800719
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1640,8 +1666,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 7.88344
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1734,8 +1760,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -1821,7 +1847,6 @@ MonoBehaviour:
   playerCam: {fileID: 616460277}
   uiCameraInteractionHint: {fileID: 0}
   itemSelector: {fileID: 0}
-  bookPageController: {fileID: 0}
 --- !u!1 &444595970 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -8293552008557556862, guid: f1a25aa2be1be46ec92cddfc444ed305, type: 3}
@@ -1878,8 +1903,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -2172,7 +2197,6 @@ MonoBehaviour:
   playerCam: {fileID: 616460277}
   uiCameraInteractionHint: {fileID: 996222040}
   itemSelector: {fileID: 1506138021}
-  bookPageController: {fileID: 277999296}
 --- !u!65 &628562418
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3294,8 +3318,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4465,8 +4489,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -4692,7 +4716,6 @@ MonoBehaviour:
   playerCam: {fileID: 616460277}
   uiCameraInteractionHint: {fileID: 996222040}
   itemSelector: {fileID: 1506138021}
-  bookPageController: {fileID: 277999296}
 --- !u!1 &1338255826
 GameObject:
   m_ObjectHideFlags: 0
@@ -4759,7 +4782,6 @@ MonoBehaviour:
   playerCam: {fileID: 616460277}
   uiCameraInteractionHint: {fileID: 0}
   itemSelector: {fileID: 0}
-  bookPageController: {fileID: 0}
 --- !u!1 &1364651577 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -7575199538056265868, guid: dd8732df7a97d4752b23abf53c541e86, type: 3}
@@ -4862,7 +4884,6 @@ MonoBehaviour:
   playerCam: {fileID: 616460277}
   uiCameraInteractionHint: {fileID: 996222040}
   itemSelector: {fileID: 1506138021}
-  bookPageController: {fileID: 277999296}
 --- !u!23 &1384378155
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5719,8 +5740,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -5813,8 +5834,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -6572,13 +6593,28 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 409cef2ef0e0aed468d3010ab04633c6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1761684555}
   m_SourcePrefab: {fileID: -5645937942226959685, guid: 409cef2ef0e0aed468d3010ab04633c6, type: 3}
 --- !u!1 &1761684553 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -6689036041284674117, guid: 409cef2ef0e0aed468d3010ab04633c6, type: 3}
   m_PrefabInstance: {fileID: 1761684552}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1761684555
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1761684553}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aed10e91db0c307429ab85f5d30c6277, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1761684558 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2774220344278030320, guid: 409cef2ef0e0aed468d3010ab04633c6, type: 3}
@@ -7112,7 +7148,6 @@ MonoBehaviour:
   playerCam: {fileID: 616460277}
   uiCameraInteractionHint: {fileID: 996222040}
   itemSelector: {fileID: 1506138021}
-  bookPageController: {fileID: 0}
 --- !u!65 &1933992155
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7498,8 +7533,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -7636,8 +7671,8 @@ Light:
   m_Type: 2
   m_Shape: 0
   m_Color: {r: 0.735849, g: 0.4830503, b: 0.23949803, a: 1}
-  m_Intensity: 1.5
-  m_Range: 8.505144
+  m_Intensity: 2
+  m_Range: 13
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
