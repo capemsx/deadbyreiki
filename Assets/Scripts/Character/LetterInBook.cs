@@ -4,13 +4,14 @@ using UnityEngine.UI;
 
 public class LetterInBook : MonoBehaviour
 {
-    public float distanceInFrontOfCamera = 3000f; // Distance from the camera where the object will be placed
+    public float distanceInFrontOfCamera = 0.2f; // Distance from the camera where the object will be placed
     public Quaternion letterRotation = Quaternion.identity; // Rotation of the teleported letter
     public GameObject bookObject; // The actual book GameObject
     public Book bookInteractable; // The script component of the book
     public LetterImagePhysics letterImagePhysics;
     public int letterPage;
     public bool foundLetter = false;
+    public UnityEngine.Camera playerCam;
 
     void Start()
     {
@@ -43,20 +44,18 @@ public class LetterInBook : MonoBehaviour
 
     void Teleport()
     {
-        // Get the main camera
-        UnityEngine.Camera mainCamera = UnityEngine.Camera.main;
-        if (mainCamera == null)
+        if (playerCam == null)
         {
             Debug.LogError("Main camera not found!");
             return;
         }
 
         // Calculate the new position in front of the camera
-        Vector3 newPosition = mainCamera.transform.position + mainCamera.transform.forward * distanceInFrontOfCamera;
+        Vector3 newPosition = playerCam.transform.position + playerCam.transform.forward * distanceInFrontOfCamera;
 
         // Set the object's position and rotation
         transform.position = newPosition;
-        transform.rotation = letterRotation;
+        transform.rotation = Quaternion.Euler(-90, 0, 0);
         Debug.Log("Letter position set to: " + newPosition);
         Debug.Log("Letter rotation set to: " + letterRotation);
     }
