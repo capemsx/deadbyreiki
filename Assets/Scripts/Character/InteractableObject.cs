@@ -4,10 +4,11 @@ using UnityEngine.UI;
 
 public class InteractableObject : MonoBehaviour
 {
-    public GameObject uiObject;
+    public GameObject? uiObject;
     public GameObject interactableObject;
     public Camera playerCam;
     public GameObject uiCameraInteractionHint;
+    public GameObject itemSelector;
 
     private bool isInteractable = false;
 
@@ -21,10 +22,17 @@ public class InteractableObject : MonoBehaviour
         // Überprüfe, ob der Spieler ESC drückt, um das UI zu schließen
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            uiObject.SetActive(false);
+            if (uiObject)
+            {
+                uiObject.SetActive(false);
+            }
+            else
+            {
+                interactableObject.GetComponent<Book>().CloseBook();
+            }
             Cursor.lockState = CursorLockMode.Locked;
         }
-        
+
         float maxDistance = 500f;
         float maxAngle = 30f;
 
@@ -44,9 +52,17 @@ public class InteractableObject : MonoBehaviour
                 if (angle < maxAngle)
                 {
                     triggerInteractionHint(true);
+
                     if (Input.GetKeyDown(KeyCode.E))
                     {
-                        uiObject.SetActive(true);
+                        if (uiObject)
+                        {
+                            uiObject.SetActive(true);
+                        }
+                        else
+                        {
+                            interactableObject.GetComponent<Book>().OpenBook();
+                        }
                         Cursor.lockState = CursorLockMode.None;
                         return;
                     }
@@ -67,18 +83,27 @@ public class InteractableObject : MonoBehaviour
             triggerInteractionHint(false);
         }
 
-        
+
     }
 
     void triggerInteractionHint(bool show)
     {
         if (show)
         {
-            if (!isInteractable) uiCameraInteractionHint.SetActive(true);
+            if (!isInteractable)
+            {
+                uiCameraInteractionHint.SetActive(true);
+                itemSelector.SetActive(true);
+                itemSelector.GetComponent<TextMeshProUGUI>().SetText(interactableObject.name);
+            }
         }
         else
         {
-            if (isInteractable) uiCameraInteractionHint.SetActive(false);
+            if (isInteractable)
+            {
+                uiCameraInteractionHint.SetActive(false);
+                itemSelector.SetActive(false);
+            }
         }
         isInteractable = show;
     }
