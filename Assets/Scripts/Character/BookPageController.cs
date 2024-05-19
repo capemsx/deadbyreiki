@@ -18,6 +18,10 @@ public class BookPageController : MonoBehaviour
         currentBook = pBook;
     }
 
+    public Book getBook() {
+        return currentBook;
+    }
+
     void TurnPageForward()
     {
         if (currentBook != null)
