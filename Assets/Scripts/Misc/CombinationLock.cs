@@ -15,6 +15,7 @@ public class CombinationLock : MonoBehaviour
     public GameObject up4Button;
     public GameObject down4Button;
     public GameObject resultText;
+    public UnlockChest unlockObject;
 
     private int[] combination = new int[4];
     private int[] correctCombination = { 1, 2, 3, 4 };
@@ -53,10 +54,10 @@ public class CombinationLock : MonoBehaviour
         if (currentCombination == "1741")
         {
             Debug.Log("Correct combination entered!");
+            unlockObject.unlock();
             ProgressController progressController = GameObject.Find("ProgressController").GetComponent<ProgressController>();
             progressController.runNextStep(1);
             progressController.hideAllDialogs();
-            Cursor.lockState = CursorLockMode.Locked;
         }
 
     }

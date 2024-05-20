@@ -11,8 +11,11 @@ public class InteractableObject : MonoBehaviour
     public GameObject uiCameraInteractionHint;
     public GameObject itemSelector;
     public BookPageController bookPageController;
+    public PlayerMovement playerMovement;
+    public PlayerCam mouseMovement;
     public String displayName;
     public bool isInteractableObject;
+    
     private bool isBookOpen = false;
     private bool isUIOpen = false;
     private bool isInteractable = false;
@@ -51,12 +54,16 @@ public class InteractableObject : MonoBehaviour
                         {
                             isUIOpen = true;
                             uiObject.SetActive(true);
+                            playerMovement.allowPlayerMovement(false);
+                            mouseMovement.allowPlayerMovement(false);
                         }
                         else if (!isBookOpen)
                         {
                             isBookOpen = true;
                             bookPageController.setBook(interactableObject.GetComponent<Book>());
                             interactableObject.GetComponent<Book>().OpenBook();
+                            playerMovement.allowPlayerMovement(false);
+                            mouseMovement.allowPlayerMovement(false);
                         }
                         Cursor.lockState = CursorLockMode.None;
                         return;
@@ -86,6 +93,8 @@ public class InteractableObject : MonoBehaviour
                 isUIOpen = false;
                 uiObject.SetActive(false);
                 Cursor.lockState = CursorLockMode.Locked;
+                playerMovement.allowPlayerMovement(true);
+                mouseMovement.allowPlayerMovement(true);
             }
             else if (isBookOpen)
             {
@@ -93,6 +102,8 @@ public class InteractableObject : MonoBehaviour
                 interactableObject.GetComponent<Book>().CloseBook();
                 bookPageController.setBook(null);
                 Cursor.lockState = CursorLockMode.Locked;
+                playerMovement.allowPlayerMovement(true);
+                mouseMovement.allowPlayerMovement(true);
             }
         }
 
@@ -104,8 +115,9 @@ public class InteractableObject : MonoBehaviour
         if (show)
         {
             if (!isInteractable)
-            {   
-                if (isInteractableObject) {
+            {
+                if (isInteractableObject)
+                {
                     uiCameraInteractionHint.SetActive(true);
                 }
                 itemSelector.SetActive(true);

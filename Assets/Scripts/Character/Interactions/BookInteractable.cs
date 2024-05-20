@@ -11,8 +11,6 @@ public class Book : MonoBehaviour
     public Image bookBackground;
     public Button buttonForwards;
     public Button buttonBackwards;
-    public PlayerMovement playerMovement;
-    public PlayerCam mouseMovement;
     public int pageNumber = 0;
     private Texture2D[] pages;
 
@@ -34,9 +32,6 @@ public class Book : MonoBehaviour
         LoadImages();
         DisplayPages(pageNumber);
         isOpen = true;
-        // Disable player movement
-        playerMovement.allowPlayerMovement(false);
-        mouseMovement.allowPlayerMovement(false);
 
         // Unlock cursor and make it visible
         Cursor.lockState = CursorLockMode.None;
@@ -50,10 +45,6 @@ public class Book : MonoBehaviour
 
     public void CloseBook()
     {
-
-        // Enable player movement
-        playerMovement.allowPlayerMovement(true);
-        mouseMovement.allowPlayerMovement(true);
 
         // Lock cursor and hide it
         Cursor.lockState = CursorLockMode.Locked;

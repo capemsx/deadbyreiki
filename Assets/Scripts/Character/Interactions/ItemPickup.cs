@@ -8,6 +8,7 @@ public class ItemPickup : MonoBehaviour
     private GameObject player;
     public Camera playerCam;
     public BookPageController bookPageController;
+    //public GameObject uiCameraInteractionHint;
 
     public GameObject getInventory() {
         return inventory;
@@ -44,6 +45,7 @@ public class ItemPickup : MonoBehaviour
                 }
             }
         }
+
     }
 
     void CheckForItems()

@@ -9,6 +9,7 @@ public class KeyholeInteraction : MonoBehaviour
     public ItemPickup playerInventory; // Reference to the player's inventory script
     public GameObject keyRequired;
     public GameObject uiCameraInteractionHint;
+    public UnlockChest unlockObject;
 
     void Update()
     {
@@ -30,7 +31,7 @@ public class KeyholeInteraction : MonoBehaviour
                 }
                 if (Input.GetKeyDown(interactionKey))
                 {
-                    //Unlocks whatever
+                    unlockObject.unlock();
                 }
             }
 
