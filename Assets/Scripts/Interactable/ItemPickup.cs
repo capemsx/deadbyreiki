@@ -1,4 +1,3 @@
-using TMPro;
 using UnityEngine;
 
 public class ItemPickup : MonoBehaviour
@@ -7,6 +6,7 @@ public class ItemPickup : MonoBehaviour
     public GameObject inventory; // The item currently picked up
     private GameObject player;
     public Camera playerCam;
+    public BookPageController bookPageController;
 
     private bool isUIOpen = false;
 
@@ -49,7 +49,6 @@ public class ItemPickup : MonoBehaviour
                 }
             }
         }
-        
     }
 
     void CheckForItems()
@@ -90,8 +89,22 @@ public class ItemPickup : MonoBehaviour
             // Activate the item GameObject
             itemToDrop.SetActive(true);
 
-            // Calculate the drop position based on the camera's forward direction
-            Vector3 dropPosition = playerCam.transform.position + playerCam.transform.forward * 1.5f;
+            // Calculate the intended drop position based on the camera's forward direction
+            Vector3 intendedDropPosition = playerCam.transform.position + playerCam.transform.forward * 1.5f;
+
+            // Perform a raycast to check for obstacles
+            RaycastHit hit;
+            Vector3 dropPosition;
+            if (Physics.Raycast(playerCam.transform.position, playerCam.transform.forward, out hit, 1.5f))
+            {
+                // If an obstacle is hit, adjust the drop position to be slightly in front of the hit point
+                dropPosition = hit.point - playerCam.transform.forward * 0.5f;
+            }
+            else
+            {
+                // If no obstacle is hit, drop the item in front of the player's face
+                dropPosition = intendedDropPosition;
+            }
 
             // Set the item's position and rotation
             itemToDrop.transform.position = dropPosition;
