@@ -6,7 +6,6 @@ public class ItemPickup : MonoBehaviour
     public GameObject inventory; // The item currently picked up
     private GameObject player;
     public Camera playerCam;
-    public BookPageController bookPageController;
 
     private bool isUIOpen = false;
 

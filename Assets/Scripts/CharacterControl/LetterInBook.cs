@@ -32,7 +32,6 @@ public class LetterInBook : MonoBehaviour
 
         // Check the current page of the book
         int currentPage = bookInteractable.getPage();
-        Debug.Log("Current page: " + currentPage);
 
         // Check if the current page matches the letter page and if the letter hasn't been teleported yet
         if (currentPage == letterPage && !foundLetter)
