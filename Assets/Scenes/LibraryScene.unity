@@ -14812,7 +14812,7 @@ MonoBehaviour:
   crosshair: {fileID: 1178478141}
   playerMovement: {fileID: 350146059}
   playerCam: {fileID: 616460278}
-  doOpener: 1
+  doOpener: 0
 --- !u!1 &1968049423
 GameObject:
   m_ObjectHideFlags: 0
