@@ -39,6 +39,7 @@ public class InteractableObject : MonoBehaviour
                 uiObject.SetActive(false);
                 itemPickup.setIsUIOpen(false);
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 playerMovement.allowPlayerMovement(true);
                 mouseMovement.allowPlayerMovement(true);
             }
@@ -49,6 +50,7 @@ public class InteractableObject : MonoBehaviour
                 interactableObject.GetComponent<Book>().CloseBook();
                 bookPageController.setBook(null);
                 Cursor.lockState = CursorLockMode.Locked;
+                Cursor.visible = false;
                 playerMovement.allowPlayerMovement(true);
                 mouseMovement.allowPlayerMovement(true);
             }
@@ -87,6 +89,7 @@ public class InteractableObject : MonoBehaviour
                             mouseMovement.allowPlayerMovement(false);
                         }
                         Cursor.lockState = CursorLockMode.None;
+                        Cursor.visible = true;
                         return;
                     }
                 }
