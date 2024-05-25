@@ -29,7 +29,7 @@ public class KeyholeInteraction : MonoBehaviour
                 {
                     uiCameraInteractionHint.SetActive(false);
                 }
-                if (Input.GetKeyDown(interactionKey))
+                if (Input.GetKeyDown(interactionKey) && playerInventory.getInventory() == keyRequired)
                 {
                     unlockObject.unlock();
                 }

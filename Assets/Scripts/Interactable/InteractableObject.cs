@@ -109,10 +109,10 @@ public class InteractableObject : MonoBehaviour
             triggerInteractionHint(false);
         }
 
-        if (!(itemPickup.getInventory() == null))
+        /*if (!(itemPickup.getInventory() == null))
         {
             uiCameraInteractionHint.SetActive(false);
-        }
+        }*/
 
     }
 
