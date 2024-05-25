@@ -88,6 +88,7 @@ public class LookAtTransparency : MonoBehaviour
                 {
                     // Disable the collider when transparency threshold is reached
                     targetCollider.enabled = false;
+                    targetObject.SetActive(false);
                     isTransparent = true;
                 }
                 cooldownTimer = 0f;
@@ -105,6 +106,7 @@ public class LookAtTransparency : MonoBehaviour
             {
                 // Enable the collider when the object is fully opaque
                 targetCollider.enabled = true;
+                targetObject.SetActive(true);
                 isTransparent = false;
             }
         }

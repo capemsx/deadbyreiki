@@ -37,35 +37,35 @@ public class FluteQuestController : MonoBehaviour
     {
         methodSequence = new List<System.Action>
         {
-            Method4,
+            Method4, // G
 
-            Method7,
-            Method7,
-            Method7,
-            Method7,
-            Method8,
+            Method7, // C"
+            Method7, // C" 
+            Method7, // C"
+            Method7, // C"
+            Method8, // D"
 
-            Method9,
-            Method8,
-            Method7,
-            Method6,
-            Method7,
-            Method4,
+            Method9, // E"
+            Method8, // D"
+            Method7, // C"
+            Method6, // H
+            Method7, // C"
+            Method4, // G
 
-            Method5,
-            Method5,
-            Method5,
-            Method5,
-            Method6,
-            Method7,
-            Method5,
+            Method5, // A
+            Method5, // A
+            Method5, // A
+            Method5, // A
+            Method6, // H
+            Method7, // C"
+            Method5, // A
 
-            Method4,
-            Method3,
-            Method2,
-            Method3,
-            Method4,
-            Method4,
+            Method4, // G
+            Method3, // F
+            Method2, // E
+            Method3, // F
+            Method4, // G
+            Method4, // G
         };
     }
 
