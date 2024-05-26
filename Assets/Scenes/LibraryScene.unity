@@ -5894,7 +5894,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 350146061}
-  speed: 5
+  speed: 3
   gravity: -30
   playerOrientation: {fileID: 292625346}
 --- !u!143 &350146061
@@ -6047,7 +6047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   walkingClip: {fileID: 8300000, guid: 52045e46f85cdb044b75a176fe016bd6, type: 3}
-  walkingThreshold: 0.001
+  walkingThreshold: 0.000001
   smoothingFrames: 15
 --- !u!1 &352488210 stripped
 GameObject:
