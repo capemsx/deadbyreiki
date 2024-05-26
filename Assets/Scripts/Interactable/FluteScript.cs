@@ -6,6 +6,7 @@ public class FluteScript : MonoBehaviour
 {
     public ItemPickup itemPickup;
     public GameObject fluteObject;
+    public GameObject fluteUIObject;
     public RawImage fluteImage;
     public RawImage note1;
     public RawImage note2;
@@ -39,7 +40,7 @@ public class FluteScript : MonoBehaviour
     private AudioSource audioSource;
     private Dictionary<string, AudioClip> noteMapping;
     private float cooldownTimer = 0f;
-    private const float inputCooldown = 1f; // Cooldown period in seconds
+    private const float inputCooldown = 2f; // Cooldown period in seconds
 
     // Start is called before the first frame update
     void Start()
@@ -137,6 +138,7 @@ public class FluteScript : MonoBehaviour
         if (itemPickup.getInventory() == fluteObject)
         {
             fluteImage.enabled = true;
+            fluteUIObject.SetActive(true);
         }
         else
         {
@@ -148,6 +150,7 @@ public class FluteScript : MonoBehaviour
             note5.enabled = false;
             note6.enabled = false;
             note7.enabled = false;
+            fluteUIObject.SetActive(false);
         }
 
         if (Input.GetKeyDown(note1Key))

@@ -8,6 +8,10 @@ public class PlayerCam : MonoBehaviour
     float xRotation = 0f;
     private bool isPlayerMovementEnabled = true; // Flag to track player movement
 
+    public void setMouseSensitivity(float pMouseSensitivity) {
+        mouseSensitivity = pMouseSensitivity;
+    }
+
     void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;

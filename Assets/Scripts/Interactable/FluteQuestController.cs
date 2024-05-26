@@ -6,7 +6,9 @@ public class FluteQuestController : MonoBehaviour
 {
     public AudioClip finisher;
     public AudioClip failed;
+    public AudioClip unlock;
     public GameObject closetDoor;
+    public GameObject audioSourceObject;
     public bool finishedQuest = false;
 
     private int currentStep = 0;
@@ -14,6 +16,7 @@ public class FluteQuestController : MonoBehaviour
     private float inputTimer = 0f;
     private const float inputTimeout = 15f;
     private AudioSource audioSource;
+    private bool unlocked = false;
 
     void Start()
     {
@@ -30,6 +33,14 @@ public class FluteQuestController : MonoBehaviour
             Debug.Log("No input for 5 seconds! Starting over.");
             currentStep = 0;
             inputTimer = 0f;
+        }
+
+        if (!audioSource.isPlaying && finishedQuest && !unlocked)
+        {
+            audioSource = audioSourceObject.GetComponent<AudioSource>();
+            audioSource.clip = unlock;
+            audioSource.Play();
+            unlocked = true;
         }
     }
 
