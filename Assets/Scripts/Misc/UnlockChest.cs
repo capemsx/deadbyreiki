@@ -5,6 +5,7 @@ using UnityEngine;
 public class UnlockChest : MonoBehaviour
 {
     public GameObject itemToHide;
+    public GameObject itemToShow;
     public GameObject audioSourceObject;
     public AudioClip unlockSound;
 
@@ -20,5 +21,8 @@ public class UnlockChest : MonoBehaviour
         audioSource.clip = unlockSound;
         audioSource.Play();
         itemToHide.SetActive(false);
+        if (itemToShow != null) {
+            itemToShow.SetActive(true);
+        }
     }
 }

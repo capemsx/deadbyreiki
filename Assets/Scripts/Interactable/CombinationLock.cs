@@ -19,6 +19,7 @@ public class CombinationLock : MonoBehaviour
 
     private int[] combination = new int[4];
     private int[] correctCombination = { 1, 2, 3, 4 };
+    public bool advancedToNextStep = false;
 
 
     void Start()
@@ -35,7 +36,7 @@ public class CombinationLock : MonoBehaviour
 
     public void editDigit(int digitId, bool increase)
     {
-        Debug.Log("Edit digit " + digitId + " with increase: " + increase);
+        //Debug.Log("Edit digit " + digitId + " with increase: " + increase);
         if (increase)
         {
             combination[digitId] = (combination[digitId] + 1) % 10;
@@ -56,9 +57,16 @@ public class CombinationLock : MonoBehaviour
         {
             Debug.Log("Correct combination entered!");
             unlockObject.unlock();
-            ProgressController progressController = GameObject.Find("ProgressController").GetComponent<ProgressController>();
-            progressController.runNextStep(1);
-            progressController.hideAllDialogs();
+            //ProgressController progressController = GameObject.Find("ProgressController").GetComponent<ProgressController>();
+            //progressController.runNextStep(1);
+            //progressController.hideAllDialogs();
+
+            if (!advancedToNextStep)
+            {
+                ProgressController2 progressController = GameObject.Find("ProgressController").GetComponent<ProgressController2>();
+                progressController.NextStep();
+                advancedToNextStep = true;
+            }
         }
 
     }

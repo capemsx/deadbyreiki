@@ -10,7 +10,7 @@ public class ProgressController : MonoBehaviour
 
     List<int> autoContinueIndizes = new List<int>() { 0 , 2};
 
-    int stepIndex = 0;
+    public int stepIndex = 0;
 
     void Start()
     {

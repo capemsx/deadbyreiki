@@ -25,7 +25,7 @@ public class InteractableObject : MonoBehaviour
     {
 
         float maxDistance = 4f;
-        float maxAngle = 30f;
+        float maxAngle = 180f;
 
         Ray ray = playerCam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
