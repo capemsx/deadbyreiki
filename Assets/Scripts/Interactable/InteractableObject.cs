@@ -20,6 +20,12 @@ public class InteractableObject : MonoBehaviour
     private bool isBookOpen = false;
     private bool isUIOpen = false;
     private bool isInteractable = false;
+    private InputHandler inputHandler;
+
+    void Start()
+    {
+        inputHandler = GameObject.Find("InputController").GetComponent<InputHandler>();
+    }
 
     void Update()
     {
@@ -31,28 +37,15 @@ public class InteractableObject : MonoBehaviour
         RaycastHit hit;
 
         // Überprüfe, ob der Spieler E drückt, um das UI zu schließen
-        if (Input.GetKeyDown(KeyCode.E) && isInteractableObject && (isUIOpen || isBookOpen))
+        if (Input.GetKeyDown(KeyCode.E) && isInteractableObject && (isUIOpen || isBookOpen) && (inputHandler.GetIsInputFieldFocused() == false))
         {
             if (uiObject && isUIOpen)
             {
-                isUIOpen = false;
-                uiObject.SetActive(false);
-                itemPickup.setIsUIOpen(false);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                playerMovement.allowPlayerMovement(true);
-                mouseMovement.allowPlayerMovement(true);
+                CloseUI();
             }
             else if (isBookOpen)
             {
-                isBookOpen = false;
-                itemPickup.setIsUIOpen(false);
-                interactableObject.GetComponent<Book>().CloseBook();
-                bookPageController.setBook(null);
-                Cursor.lockState = CursorLockMode.Locked;
-                Cursor.visible = false;
-                playerMovement.allowPlayerMovement(true);
-                mouseMovement.allowPlayerMovement(true);
+                CloseBook();
             }
         }
         else // Durchführen des Raycasts
@@ -73,23 +66,13 @@ public class InteractableObject : MonoBehaviour
                     {
                         if (uiObject && !isUIOpen)
                         {
-                            isUIOpen = true;
-                            uiObject.SetActive(true);
-                            itemPickup.setIsUIOpen(true);
-                            playerMovement.allowPlayerMovement(false);
-                            mouseMovement.allowPlayerMovement(false);
+                            OpenUI();
                         }
                         else if (!isBookOpen)
                         {
-                            isBookOpen = true;
-                            itemPickup.setIsUIOpen(true);
-                            bookPageController.setBook(interactableObject.GetComponent<Book>());
-                            interactableObject.GetComponent<Book>().OpenBook();
-                            playerMovement.allowPlayerMovement(false);
-                            mouseMovement.allowPlayerMovement(false);
+                            OpenBook();
                         }
-                        Cursor.lockState = CursorLockMode.None;
-                        Cursor.visible = true;
+
                         return;
                     }
                 }
@@ -143,5 +126,51 @@ public class InteractableObject : MonoBehaviour
             }
         }
         isInteractable = show;
+    }
+
+    void CloseUI()
+    {
+        isUIOpen = false;
+        uiObject.SetActive(false);
+        itemPickup.setIsUIOpen(false);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        playerMovement.allowPlayerMovement(true);
+        mouseMovement.allowPlayerMovement(true);
+    }
+
+    void CloseBook()
+    {
+        isBookOpen = false;
+        itemPickup.setIsUIOpen(false);
+        interactableObject.GetComponent<Book>().CloseBook();
+        bookPageController.setBook(null);
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+        playerMovement.allowPlayerMovement(true);
+        mouseMovement.allowPlayerMovement(true);
+    }
+
+    void OpenUI()
+    {
+        isUIOpen = true;
+        uiObject.SetActive(true);
+        itemPickup.setIsUIOpen(true);
+        playerMovement.allowPlayerMovement(false);
+        mouseMovement.allowPlayerMovement(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
+    }
+
+    void OpenBook()
+    {
+        isBookOpen = true;
+        itemPickup.setIsUIOpen(true);
+        bookPageController.setBook(interactableObject.GetComponent<Book>());
+        interactableObject.GetComponent<Book>().OpenBook();
+        playerMovement.allowPlayerMovement(false);
+        mouseMovement.allowPlayerMovement(false);
+        Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 }

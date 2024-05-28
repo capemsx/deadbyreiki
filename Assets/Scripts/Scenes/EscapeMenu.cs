@@ -14,6 +14,7 @@ public class EscapeMenu : MonoBehaviour
     public PlayerCam playerCam;
 
     private bool isPaused = false;
+    private bool cursorState;
     public static float mouseSensitivity = 100.0f; // Default mouse sensitivity
 
     void Start()
@@ -47,8 +48,12 @@ public class EscapeMenu : MonoBehaviour
         escapeMenuUI.SetActive(false);
         Time.timeScale = 1f; // Resume the game
         isPaused = false;
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
+        if (cursorState)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        
     }
 
     void PauseGame()
@@ -56,8 +61,17 @@ public class EscapeMenu : MonoBehaviour
         escapeMenuUI.SetActive(true);
         Time.timeScale = 0f; // Pause the game
         isPaused = true;
-        Cursor.lockState = CursorLockMode.None;
-        Cursor.visible = true;
+        
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            cursorState = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        else
+        {
+            cursorState = false;
+        }
     }
 
     public void QuitGame()
