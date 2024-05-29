@@ -22,4 +22,10 @@ public class StartGameButton : MonoBehaviour
         sceneLoader.LoadNextScene(sceneToLoad);
     }
 
+    public void QuitGame()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit();
+    }
+
 }

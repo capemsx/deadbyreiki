@@ -5,6 +5,9 @@ using UnityEngine;
 public class AdvanceProgress : MonoBehaviour
 {
     public Camera playerCam;
+    public bool requiresItem;
+    public GameObject itemRequired;
+    public ItemPickup itemPickup;
     public bool advancedToNextStep = false;
 
     // Start is called before the first frame update
@@ -34,11 +37,20 @@ public class AdvanceProgress : MonoBehaviour
                 // Überprüfen des Winkels
                 if (angle < maxAngle)
                 {
-                    if (Input.GetKeyDown(KeyCode.E) && !advancedToNextStep)
+                    if (Input.GetKeyDown(KeyCode.E) && !advancedToNextStep && !requiresItem)
                     {
                         ProgressController2 progressController = GameObject.Find("ProgressController").GetComponent<ProgressController2>();
                         progressController.NextStep();
                         advancedToNextStep = true;
+                    }
+                    else if (Input.GetKeyDown(KeyCode.E) && !advancedToNextStep && requiresItem)
+                    {
+                        if (itemPickup.getInventory() == itemRequired)
+                        {
+                            ProgressController2 progressController = GameObject.Find("ProgressController").GetComponent<ProgressController2>();
+                            progressController.NextStep();
+                            advancedToNextStep = true;
+                        }
                     }
                 }
             }

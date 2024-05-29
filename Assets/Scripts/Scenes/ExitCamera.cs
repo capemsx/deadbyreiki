@@ -16,6 +16,6 @@ public class ExitCamera : MonoBehaviour
         // Wait for the specified delay
         yield return new WaitForSeconds(10f);
         sceneLoader.LoadNextScene(sceneToLoad);
-            Destroy(this);
+        Destroy(this);
     }
 }

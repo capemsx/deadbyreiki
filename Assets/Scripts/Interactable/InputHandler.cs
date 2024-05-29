@@ -5,6 +5,7 @@ public class InputHandler : MonoBehaviour
 {
     public TMP_InputField tmpInputField;
     public TMP_Text outputText;
+    public TMP_Text gameText;
 
     public bool advancedToNextStep = false;
     private bool isInputFieldFocused;
@@ -45,6 +46,7 @@ public class InputHandler : MonoBehaviour
     public void OnInputValueChanged(string text)
     {
         outputText.text = "Current Input: " + text;
+        gameText.text = text;
 
         if (string.Equals(text, "Friedrich", System.StringComparison.OrdinalIgnoreCase) && !advancedToNextStep)
         {
