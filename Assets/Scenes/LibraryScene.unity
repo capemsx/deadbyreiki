@@ -5970,7 +5970,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 350146061}
-  speed: 3
+  speed: 4.5
   gravity: -30
   playerOrientation: {fileID: 292625346}
 --- !u!143 &350146061
