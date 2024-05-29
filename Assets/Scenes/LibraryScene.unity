@@ -962,8 +962,8 @@ MonoBehaviour:
   playerMovement: {fileID: 350146059}
   mouseMovement: {fileID: 616460278}
   itemPickup: {fileID: 350146062}
-  displayName: Reiki von Meier
-  isInteractableObject: 0
+  displayName: An Experiment on a Bird in an Air Pump
+  isInteractableObject: 1
 --- !u!65 &27967398
 BoxCollider:
   m_ObjectHideFlags: 0
