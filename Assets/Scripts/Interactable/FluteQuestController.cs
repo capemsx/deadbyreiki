@@ -17,6 +17,7 @@ public class FluteQuestController : MonoBehaviour
     private const float inputTimeout = 15f;
     private AudioSource audioSource;
     private bool unlocked = false;
+    private bool playedWrongNote = false;
 
     void Start()
     {
@@ -30,7 +31,7 @@ public class FluteQuestController : MonoBehaviour
 
         if (inputTimer > inputTimeout && currentStep > 0)
         {
-            Debug.Log("No input for 5 seconds! Starting over.");
+            Debug.Log("No input for 15 seconds! Starting over.");
             currentStep = 0;
             inputTimer = 0f;
         }
@@ -41,6 +42,12 @@ public class FluteQuestController : MonoBehaviour
             audioSource.clip = unlock;
             audioSource.Play();
             unlocked = true;
+        }
+
+        if (playedWrongNote && (inputTimer > 2) && !finishedQuest) {
+            playedWrongNote = false;
+            audioSource.clip = failed;
+            audioSource.Play();
         }
     }
 
@@ -105,8 +112,7 @@ public class FluteQuestController : MonoBehaviour
             Debug.Log("Wrong method! Starting over.");
             currentStep = 0;
             inputTimer = 0f; // Reset timer on failure
-            audioSource.clip = failed;
-            audioSource.Play();
+            playedWrongNote = true;
         }
     }
 

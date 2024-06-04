@@ -6,6 +6,8 @@ public class InputHandler : MonoBehaviour
     public TMP_InputField tmpInputField;
     public TMP_Text outputText;
     public TMP_Text gameText;
+    public GameObject objectToHide1;
+    public GameObject objectToHide2;
 
     public bool advancedToNextStep = false;
     private bool isInputFieldFocused;
@@ -69,5 +71,7 @@ public class InputHandler : MonoBehaviour
         ProgressController2 progressController = GameObject.Find("ProgressController").GetComponent<ProgressController2>();
         progressController.NextStep();
         advancedToNextStep = true;
+        objectToHide1.SetActive(false);
+        objectToHide2.SetActive(false);
     }
 }

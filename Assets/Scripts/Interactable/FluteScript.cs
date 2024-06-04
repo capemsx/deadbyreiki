@@ -76,7 +76,7 @@ public class FluteScript : MonoBehaviour
         if (audioSource == null) return; // Exit if AudioSource is not present
 
         // Check if the spacebar is pressed
-        if (Input.GetKey(playNote) && (cooldownTimer >= inputCooldown))
+        if (Input.GetKey(playNote) && (cooldownTimer >= inputCooldown) && itemPickup.getInventory() == fluteObject)
         {
             // Check which keys are pressed and form a key string
             string key = (Input.GetKey(note1Key) ? "1" : "0") +
