@@ -4,6 +4,8 @@ public class CreditsScript : MonoBehaviour
 {
     public float speed = 100f; // Speed at which the UI object will move upwards
     public float duration = 2f; // Duration for which the UI object will move upwards
+    public PlayerMovement playerMovement;
+    public PlayerCam mouseMovement;
 
     private RectTransform rectTransform;
     private float elapsedTime = 0f;
@@ -16,6 +18,8 @@ public class CreditsScript : MonoBehaviour
         {
             Debug.LogError("MoveUIObjectUpwards script requires a RectTransform component on the same GameObject.");
         }
+        playerMovement.allowPlayerMovement(false);
+        mouseMovement.allowPlayerMovement(false);
         StartMoving();
     }
 

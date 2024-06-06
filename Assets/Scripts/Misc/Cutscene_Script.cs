@@ -14,6 +14,7 @@ public class Cutscene_Script : MonoBehaviour
         Debug.Log("Debugging active!");
         initialStartTime = Time.time * 1000;
         Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
     }
 
     // Update is called once per frame

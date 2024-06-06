@@ -12,6 +12,8 @@ public class SchoolSceneScript : MonoBehaviour
     void Start()
     {
         reiki.SetActive(false); // Verstecke reiki zu Beginn
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
         Invoke("ShowReiki", showDelay); // Zeige reiki nach der Zeitverzögerung
         Invoke("SwitchScene", switchDelay); // Zeige reiki nach der Zeitverzögerung
     }
