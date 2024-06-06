@@ -18270,7 +18270,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 1.5466309, y: -0.095336914}
+  m_AnchoredPosition: {x: 1.546875, y: -0.095214844}
   m_SizeDelta: {x: 11.335, y: 4.823}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1019846044
@@ -18568,6 +18568,12 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 4529049c4cb5d6e439f51cb5c0d0209f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1888996485}
+    - targetCorrespondingSourceObject: {fileID: -6689036041284674117, guid: 4529049c4cb5d6e439f51cb5c0d0209f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1888996484}
     - targetCorrespondingSourceObject: {fileID: -4150939876983180555, guid: 4529049c4cb5d6e439f51cb5c0d0209f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1093557096}
@@ -21502,9 +21508,9 @@ MonoBehaviour:
 
     Kali
 
-    Jackie
+    Maki
 
-    Maki'
+    Jackie'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -21642,9 +21648,9 @@ MonoBehaviour:
 
     Kali
 
-    Jackie
+    Maki
 
-    Maki'
+    Jackie'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
   m_sharedMaterial: {fileID: 2147374, guid: 0161d805a3764c089bef00bfe00793f5, type: 2}
@@ -32985,6 +32991,53 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 3.850005, y: 1.3323843, z: 1.9922051}
   m_Center: {x: 1.9936316, y: 0.2851476, z: 0.9515167}
+--- !u!1 &1888996483 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -6689036041284674117, guid: 4529049c4cb5d6e439f51cb5c0d0209f, type: 3}
+  m_PrefabInstance: {fileID: 1052133818}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1888996484
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888996483}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.8823929, z: 0.062323555}
+  m_Center: {x: -0.0000000013888871, y: 1.0248526, z: 1.485409}
+--- !u!65 &1888996485
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1888996483}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1.8823929, z: 0.4073185}
+  m_Center: {x: 0.000000001289857, y: 1.0248405, z: 0.8777391}
 --- !u!1 &1892751274
 GameObject:
   m_ObjectHideFlags: 0
