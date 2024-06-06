@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LibraryScene.unity
     guid: 17da9efa172fea448b027ad43e570702
+  - enabled: 1
+    path: Assets/Scenes/SchoolScene.unity
+    guid: 888ebf2520e084f97801fb9fde4f9ded
   m_configObjects: {}
