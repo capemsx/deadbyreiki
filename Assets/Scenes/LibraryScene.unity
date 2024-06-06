@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 0.415
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.052836757, g: 0.05567124, b: 0.050247658, a: 0.415}
+  m_IndirectSpecularColor: {r: 0.05283657, g: 0.055671085, b: 0.050247602, a: 0.415}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -33774,7 +33774,7 @@ MonoBehaviour:
   moveSpeed: 0.55
   objectToActivate: {fileID: 273887667}
   objectToMove: {fileID: 1481239219}
-  displayName: looser Ziegelstein
+  displayName: lockerer Ziegelstein
 --- !u!1 &1938196014
 GameObject:
   m_ObjectHideFlags: 0
